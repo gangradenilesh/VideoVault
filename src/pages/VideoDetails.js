@@ -23,7 +23,6 @@ const VideoDetails = () => {
     fetchRelatedVideos();
   }, [id]);
 
-  // fetch Data for that perticular video
   const fetchVideoDetails = async () => {
     setLoading(true);
     const data = await fetchDataFromApi(`video/details/?id=${id}`);
@@ -32,7 +31,6 @@ const VideoDetails = () => {
     setLoading(false);
   };
 
-  // fetch Data for the suggestion videos
   const fetchRelatedVideos = async () => {
     setLoading(true);
     const data = await fetchDataFromApi(`video/related-contents/?id=${id}`);

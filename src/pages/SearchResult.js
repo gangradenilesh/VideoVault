@@ -31,8 +31,6 @@ const SearchResult = () => {
 
       <div className="grow w-[calc(100%-240px)] h-full overflow-y-auto bg-white dark:bg-black">
         <div className="grid grid-cols-1 gap-2 p-5">
-          {/* When result is blank means data is not fetched yet meanwhile that time show Shimmer UI 
-             when data fetching is done that means we get result data then show the data in the dom*/}
           {result === ""
             ? Array(20)
                 .fill("")
@@ -43,7 +41,6 @@ const SearchResult = () => {
                 if (item?.type !== "video") return false;
                 return (
                   <SearchResultVideoCard key={index} video={item?.video} />
-                  // i allways prefered to pass unique key that i got from the api and that is standered way also but for this api some unique key like videoId present twice and more in the searchResults, i don't khow why. So, forcefully i choose map index :(
                 );
               })}
         </div>
